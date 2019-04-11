@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import Datepicker from './components/Datepicker';
+import DatePicker from './DatePicker';
 import './App.css';
 
 class App extends Component {
@@ -8,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="MainContent">
-          <Datepicker />
+          <DatePicker />
         </div>
       </div>
     );

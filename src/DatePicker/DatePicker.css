@@ -1,0 +1,25 @@
+.DatePickerContainer {
+    max-width: 500px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15)
+}
+
+.DatePickerContainer_Title {
+    font-size: 1.2rem;
+    color: #4f4f4f;
+}
+
+.WeekdayContainer {
+    display: flex;
+}
+
+.Weekday {
+    display: block;
+    flex: 1 0 0%;
+    padding: 0.8rem;
+    background: transparent;
+    font-size: 1.2 rem;
+    color: #637381;
+    text-align: center;
+}
