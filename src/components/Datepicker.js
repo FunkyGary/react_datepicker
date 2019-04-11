@@ -1,9 +1,14 @@
 import React from "react";
-import './DatePicker.css';
+import './Datepicker.css';
 
 class DatePicker extends React.PureComponent {
     render() {
-        return 'Hello from DatePicker';
+        return (
+            <div className='DatePickerContainer'>
+                <div className='DatePickerContainer_Title'>{'March'}</div>
+                <div className="SomeMonth"></div>
+            </div>
+        )
     }
 }
 
