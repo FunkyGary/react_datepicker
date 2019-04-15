@@ -12,6 +12,11 @@ class Month extends React.PureComponent {
     constructor(props) {
         super(props);
         this.renderWeek = this.renderWeek.bind(this);
+        this.handleMouseEnter = this.handleMouseEnter.bind(this);
+        this.handleMouseLeave = this.handleMouseLeave.bind(this);
+        this.state = {
+            hoveredDate: null,
+        }
     }
 
     render() {
@@ -46,6 +51,7 @@ class Month extends React.PureComponent {
     }
     renderWeek(fullDate, dayIndex) {
         const {onDayClick} = this.props;
+        const {hoveredDate} = this.state;
         if (fullDate == null) {
             return <Day key={dayIndex} />;
         } 
@@ -56,9 +62,25 @@ class Month extends React.PureComponent {
                 fullDate={fullDate}
                 onClick={onDayClick}
                 selected={date === this.props.date}
+                hovering={date === hoveredDate}
+                onMouseEnter={this.handleMouseEnter}
+                onMouseLeave={this.handleMouseLeave}
             />
         )
     }
+    handleMouseEnter(date) {
+        this.setState({
+            hoveredDate: date,
+        })
+    }
+
+    handleMouseLeave(date) {
+        this.setState({
+            hoveredDate: null,
+        })
+    }
+
+
 }
 
 function abbrevationFromWeekday(weekday) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Day({fullDate, onClick, selected}) {
+export default function Day({fullDate, onClick, selected, hovering, onMouseEnter, onMouseLeave}) {
     if (fullDate == null) {
         return <div className='EmptyStateDay' />
     }
@@ -8,10 +8,17 @@ export default function Day({fullDate, onClick, selected}) {
     let className = 'Day';
 
     if (selected) {
-        className = 'Day Day--selected'
+        className = 'Day Day_selected'
+    } else if (hovering) {
+        className = 'Day Day_hovering'
     }
 
     return (
-        <button className={className} onClick={onClick.bind(this, date)}>{date}</button>
+        <button 
+            className={className} 
+            onClick={onClick.bind(this, date)}
+            onMouseEnter={onMouseEnter.bind(this, date)}
+            onMouseLeave={onMouseLeave}
+        >{date}</button>
     )
 }
