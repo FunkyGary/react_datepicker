@@ -1,13 +1,17 @@
 import React from 'react';
 
-export default function Day({fullDate}) {
+export default function Day({fullDate, onClick, selected}) {
     if (fullDate == null) {
         return <div className='EmptyStateDay' />
     }
     const date = fullDate.getDate();
-    const className = 'Day';
+    let className = 'Day';
+
+    if (selected) {
+        className = 'Day Day--selected'
+    }
 
     return (
-        <button className={className}>{date}</button>
+        <button className={className} onClick={onClick.bind(this, date)}>{date}</button>
     )
 }

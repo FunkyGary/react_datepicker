@@ -56,3 +56,9 @@
     text-align: center;
     cursor: pointer;
 }
+
+.Day--selected {
+    background: #5c6ac4;
+    border: 1px solid #5c6ac4;
+    color: #fff;
+}

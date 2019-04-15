@@ -13,7 +13,12 @@ class DatePicker extends React.PureComponent {
         return (
             <div className='DatePickerContainer'>
                 <div className='DatePickerContainer_Title'>{monthName}</div>
-                <Month />
+                <Month 
+                    date={dateNumber}
+                    month={monthNumber}
+                    year={yearNumber}
+                    onDayClick={onDayClick}
+                />
             </div>
         )
     }

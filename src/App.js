@@ -5,6 +5,7 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleDayClick = this.handleDayClick.bind(this);
     this.state = {
       selectedDate: new Date(),
     }
@@ -21,6 +22,7 @@ class App extends Component {
       )
     })
   }
+
   render() {
     const {selectedDate} = this.state;
     return (
